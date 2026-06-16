@@ -1,0 +1,28 @@
+package com.ems.employee_management_system.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.ems.employee_management_system.entity.Employee;
+import com.ems.employee_management_system.repository.EmployeeRepository;
+
+@RestController
+@RequestMapping("/api/employees")
+@CrossOrigin("*")
+public class EmployeeController {
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+    @GetMapping
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAll();
+    }
+
+    @PostMapping
+    public Employee createEmployee(@RequestBody Employee employee) {
+        return employeeRepository.save(employee);
+    }
+}

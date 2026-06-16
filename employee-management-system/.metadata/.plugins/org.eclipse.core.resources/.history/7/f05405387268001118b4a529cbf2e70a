@@ -1,0 +1,5 @@
+package com.ems.employee_management_system.entity;
+
+public class Employee {
+
+}

@@ -1,0 +1,5 @@
+package com.ems.employee_management_system.repository;
+
+public class EmployeeRepository {
+
+}
